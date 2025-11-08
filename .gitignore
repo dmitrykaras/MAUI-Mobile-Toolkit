@@ -1,0 +1,124 @@
+## .NET MAUI Git Ignore
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio files
+.vs/
+.vscode/
+*.user
+*.userosscache
+*.sln.iml
+*.csproj.user
+*.pidb
+*.suo
+*.userprefs
+*~
+*.db
+
+# MAUI specific
+Resources/Raw/
+MauiImports.cs
+
+# Android
+*.apk
+*.aab
+*.ap_
+*.aab
+*.aab.idsig
+*.keystore
+packaging.properties
+
+# iOS/macOS
+*.dsym
+*.dylib
+compilation.data
+*.mdb
+*.ipa
+*.app.dSYM
+*.app.dSYM/**
+*.app.zip
+*.app
+*.pch
+*.xcent
+*.xcuserstate
+*.xcsettings
+*.entitlements
+
+# Windows
+*.appx
+*.appxbundle
+*.cer
+*.pfx
+*.p12
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+*_msix_*
+
+# NuGet
+**/packages/*
+!**/packages/build/
+*.nupkg
+.nuget/
+nuget.exe
+
+# VS Code
+.history/
+
+# Rider
+.idea/
+*.sln.iml
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+Desktop.ini
+
+# Local configuration files
+local.properties
+local.settings.json
+
+# Logs
+*.log
+logs/
+
+# Temp files
+*.tmp
+*.temp
+
+# Code coverage
+coverage.xml
+*.coverage
+*.coveragexml
+
+# Performance logs
+*.diagsession
+*.etl
+
+# Backup files
+*.backup
+*.bak
+
+# Local development
+appsettings.Development.json
