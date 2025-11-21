@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="TaskTracking.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="My Tasks">
+
+    <StackLayout Margin="20">
+
+        <!-- Заголовок -->
+        <Label Text="My Tasks" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        <!-- Поле ввода + кнопка -->
+        <Grid ColumnDefinitions="*, Auto" Margin="0,10">
+            <Entry x:Name="TaskEntry"
+                   Placeholder="Enter task..."
+                   Grid.Column="0"
+                   Completed="OnAddTaskClicked" />
+
+            <Button Text="Add"
+                    Grid.Column="1"
+                    Margin="10,0,0,0"
+                    Clicked="OnAddTaskClicked" />
+        </Grid>
+
+        <!-- Список задач -->
+        <CollectionView x:Name="TasksCollectionView" Margin="0,20">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+
+                    <!-- Одна строка задачи -->
+                    <Grid Padding="10" ColumnDefinitions="Auto, *, Auto">
+
+                        <!-- Чекбокс -->
+                        <CheckBox IsChecked="{Binding IsDone}"
+                                  CheckedChanged="OnTaskToggled"
+                                  VerticalOptions="Center" />
+
+                        <!-- Текст задачи -->
+                        <Label Text="{Binding Text}"
+                               Grid.Column="1"
+                               Margin="10,0"
+                               VerticalOptions="Center">
+
+                            <!-- Если задача выполнена — зачеркнуть -->
+                            <Label.Triggers>
+                                <DataTrigger TargetType="Label"
+                                             Binding="{Binding IsDone}"
+                                             Value="True">
+                                    <Setter Property="TextDecorations" Value="Strikethrough" />
+                                    <Setter Property="TextColor" Value="Gray" />
+                                </DataTrigger>
+                            </Label.Triggers>
+                        </Label>
+
+                        <!-- Удаление -->
+                        <Button Text="×"
+                                Grid.Column="2"
+                                TextColor="Red"
+                                FontSize="18"
+                                BackgroundColor="Transparent"
+                                Clicked="OnDeleteTaskClicked" />
+                    </Grid>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+</ContentPage>
